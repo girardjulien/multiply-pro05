@@ -1,10 +1,15 @@
-<div class="card" *ngFor="let result of multiplyS.results; let i = index;">
-    <div class="card-header"><h1>Calcul {{ i }}</h1></div>
-    <div class="card-body">
-        <h5 class="card-title">Multiplication : {{ result.multiplication }}</h5>
-        <p [ngStyle]="{'color': result.booleanResult ? 'green' : 'red'}">Réponse : {{ result.result }} </p>
-        <span *ngIf="!result.booleanResult"><i>Solution : {{ result.answer }}</i></span>
-    </div>
-</div>
+<div class="container">
+    <h1>Score final : {{ score }}</h1>
 
-<button routerLink="/multiply/0" (click)="multiplyS.results = []" class="btn btn-primary">Start the Quiz over</button>
+    <div class="card" *ngFor="let result of multiplyS.results; let i = index;">
+        <div class="card-header"><h3>Calcul {{ i+1 }}</h3></div>
+        <div class="card-body">
+            <h5 class="card-title">Multiplication : {{ result.multiplication }}</h5>
+            <p [ngStyle]="{'color': result.booleanResult ? 'green' : 'red'}">Réponse : {{ result.result }} </p>
+            <span *ngIf="!result.booleanResult"><i>Solution : {{ result.answer }}</i></span>
+        </div>
+    </div>
+    <br />
+    <button routerLink="/multiply/0" (click)="multiplyS.results = []" class="btn btn-primary">Start the game over</button>
+    <br />
+</div>

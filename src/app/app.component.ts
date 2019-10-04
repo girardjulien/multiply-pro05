@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MultiplyService } from './multiply.service';
+import { Player } from './player';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,9 @@ import { MultiplyService } from './multiply.service';
 })
 export class AppComponent {
   title = 'app-multiply';
+  player: Player;
 
   constructor(public multiplyS: MultiplyService) {
-    
+    this.player = new Player('test@test.fr', 'motdepasse');
   }
 }

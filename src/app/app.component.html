@@ -2,7 +2,16 @@
 <div class="container-fuild principal">
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">{{ title }}</a>
-    <p>{{ multiplyS.results.length }} / {{ multiplyS.multiplications.length }}</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link">Joueur : {{ player.email }}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">{{ multiplyS.results.length }} / {{ multiplyS.multiplications.length }}</a>
+          </li>
+      </ul>
+    </div>
   </nav>
   <router-outlet></router-outlet>
 </div>
