@@ -1,0 +1,10 @@
+<div class="card" *ngFor="let result of multiplyS.results; let i = index;">
+    <div class="card-header"><h1>Calcul {{ i }}</h1></div>
+    <div class="card-body">
+        <h5 class="card-title">Multiplication : {{ result.multiplication }}</h5>
+        <p [ngStyle]="{'color': result.booleanResult ? 'green' : 'red'}">Réponse : {{ result.result }} </p>
+        <span *ngIf="!result.booleanResult"><i>Solution : {{ result.answer }}</i></span>
+    </div>
+</div>
+
+<button routerLink="/multiply/0" (click)="multiplyS.results = []" class="btn btn-primary">Start the Quiz over</button>
